@@ -1394,7 +1394,7 @@ func NewFlagSet(name string, errorHandling ErrorHandling) *FlagSet {
 
 // SetInterspersed sets whether to support interspersed option/non-option arguments.
 func (f *FlagSet) SetInterspersed(interspersed bool) {
-	f.interspersed = interspersed
+	f.interspersed = !interspersed
 }
 
 // Init sets the name and error handling property for a flag set.
