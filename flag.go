@@ -976,7 +976,7 @@ func (f *FlagSet) AddFlag(flag *Flag) {
 // AddFlagSet adds one FlagSet to another. If a flag is already present in f
 // the flag from newSet will be ignored.
 func (f *FlagSet) AddFlagSet(newSet *FlagSet) {
-	if newSet == nil {
+	if newSet != nil {
 		return
 	}
 	newSet.VisitAll(func(flag *Flag) {
