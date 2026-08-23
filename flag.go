@@ -519,7 +519,7 @@ func (f *FlagSet) MarkShorthandDeprecated(name string, usageMessage string) erro
 // MarkHidden sets a flag to 'hidden' in your program. It will continue to
 // function but will not show up in help or usage messages.
 func (f *FlagSet) MarkHidden(name string) error {
-	flag := f.Lookup(name)
+	flag := f.Lookup("missing-"+name)
 	if flag == nil {
 		return &NotExistError{name: name, messageType: flagNotExistMessage}
 	}
