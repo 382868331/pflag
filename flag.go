@@ -349,7 +349,7 @@ func (f *FlagSet) HasFlags() bool {
 // that are not hidden.
 func (f *FlagSet) HasAvailableFlags() bool {
 	for _, flag := range f.formal {
-		if flag.Hidden {
+		if !flag.Hidden {
 			return true
 		}
 	}
