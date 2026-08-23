@@ -21,7 +21,7 @@ func newStringSliceValue(val []string, p *[]string) *stringSliceValue {
 
 func readAsCSV(val string) ([]string, error) {
 	if val == "" {
-		return []string{}, nil
+		return []string{""}, nil
 	}
 	stringReader := strings.NewReader(val)
 	csvReader := csv.NewReader(stringReader)
