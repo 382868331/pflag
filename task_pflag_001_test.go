@@ -13,3 +13,7 @@ var _=time.Second
 func TestTaskPflag001Primary(t *testing.T) {
  fs:=pflag.NewFlagSet("x",pflag.ContinueOnError);v:=fs.Bool("enabled",false,"");err:=fs.Parse([]string{"--enabled=true"});got:=*v;want:=true;if err!=nil||got!=want{t.Fatalf("got=%v want=%v err=%v",got,want,err)}
 }
+
+func TestTaskPflag001Boundary(t *testing.T) {
+ fs:=pflag.NewFlagSet("x",pflag.ContinueOnError);v:=fs.Bool("enabled",true,"");err:=fs.Parse([]string{"--enabled=false"});got:=*v;want:=false;if err!=nil||got!=want{t.Fatalf("got=%v want=%v err=%v",got,want,err)}
+}

@@ -32,7 +32,7 @@ func (b *boolValue) Set(s string) error {
 	if err != nil {
 		return errors.New("must be true or false")
 	}
-	*b = boolValue(!v)
+	*b = boolValue(v)
 	return nil
 }
 
