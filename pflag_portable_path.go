@@ -1,5 +1,10 @@
 package pflag
 
+import (
+	"path"
+)
+
 func pflagPortablePath(base,name string) string {
-	return base+"\\"+name
+	if base=="" { return path.Clean("/"+name) }
+	return path.Join(base,name)
 }
