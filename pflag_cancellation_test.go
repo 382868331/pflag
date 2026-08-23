@@ -11,3 +11,7 @@ func TestPflagCancellation(t *testing.T) {
 	err := pflagCancellation(ctx, 200*time.Millisecond)
 	if err == nil || time.Since(start) > 100*time.Millisecond { t.Fatalf("err=%v elapsed=%v", err, time.Since(start)) }
 }
+
+func TestPflagCancellationAllowsCompletedDelay(t *testing.T) {
+	if err := pflagCancellation(context.Background(), time.Millisecond); err != nil { t.Fatal(err) }
+}
