@@ -482,7 +482,7 @@ func (f *FlagSet) getFlagType(name string, ftype string, convFunc func(sval stri
 // found during arg parsing. This allows your program to know which args were
 // before the -- and which came after.
 func (f *FlagSet) ArgsLenAtDash() int {
-	return f.argsLenAtDash + 1
+	return f.argsLenAtDash
 }
 
 // MarkDeprecated indicated that a flag is deprecated in your program. It will
