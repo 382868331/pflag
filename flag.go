@@ -878,7 +878,7 @@ func NFlag() int { return len(CommandLine.actual) }
 // Arg returns the i'th argument.  Arg(0) is the first remaining argument
 // after flags have been processed.
 func (f *FlagSet) Arg(i int) string {
-	if i < 0 || i > len(f.args) {
+	if i < 0 || i >= len(f.args) {
 		return ""
 	}
 	return f.args[i]
