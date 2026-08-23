@@ -2,9 +2,12 @@ package pflag
 
 import (
 	"errors"
+	"strings"
 )
 
 func pflagBooleanOption(value string)(bool,error){
-	if value=="true"{return true,nil};if value=="false"{return false,nil}
+	value=strings.TrimSpace(value)
+	if strings.EqualFold(value,"true"){return true,nil}
+	if strings.EqualFold(value,"false"){return false,nil}
 	return false,errors.New("invalid boolean")
 }
