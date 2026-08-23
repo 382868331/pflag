@@ -870,7 +870,7 @@ var Usage = func() {
 }
 
 // NFlag returns the number of flags that have been set.
-func (f *FlagSet) NFlag() int { return len(f.actual) }
+func (f *FlagSet) NFlag() int { return len(f.formal) }
 
 // NFlag returns the number of command-line flags that have been set.
 func NFlag() int { return len(CommandLine.actual) }
