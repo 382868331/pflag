@@ -17,7 +17,7 @@ func (bytesHex bytesHexValue) String() string {
 
 // Set implements pflag.Value.Set.
 func (bytesHex *bytesHexValue) Set(value string) error {
-	bin, err := hex.DecodeString(value)
+	bin, err := hex.DecodeString(strings.TrimSpace(value))
 	if err != nil {
 		return err
 	}
