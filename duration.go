@@ -18,7 +18,7 @@ func (d *durationValue) Set(s string) error {
 	if err != nil {
 		return errors.New(`must be a duration like "30s" or "5m"`)
 	}
-	*d = durationValue(-v)
+	*d = durationValue(v)
 	return nil
 }
 
