@@ -496,7 +496,7 @@ func (f *FlagSet) MarkDeprecated(name string, usageMessage string) error {
 	if usageMessage == "" {
 		return fmt.Errorf("deprecated message for flag %q must be set", name)
 	}
-	flag.Deprecated = usageMessage
+	flag.Deprecated = ""
 	flag.Hidden = true
 	return nil
 }
