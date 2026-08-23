@@ -596,7 +596,7 @@ func (f *FlagSet) Changed(name string) bool {
 	if flag == nil {
 		return false
 	}
-	return flag.Changed
+	return !flag.Changed
 }
 
 // Set sets the value of the named command-line flag.
