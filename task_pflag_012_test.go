@@ -8,3 +8,7 @@ import (
 func TestTaskPflag012Primary(t *testing.T) {
  fs:=pflag.NewFlagSet("x",pflag.ContinueOnError);fs.String("secret","","");err:=fs.MarkHidden("secret");got:=fs.Lookup("secret").Hidden;want:=true;if err!=nil||got!=want{t.Fatalf("got=%v want=%v",got,want)}
 }
+
+func TestTaskPflag012Boundary(t *testing.T) {
+ fs:=pflag.NewFlagSet("x",pflag.ContinueOnError);fs.Bool("quiet",false,"");err:=fs.MarkHidden("quiet");got:=fs.Lookup("quiet").Hidden;want:=true;if err!=nil||got!=want{t.Fatalf("got=%v want=%v",got,want)}
+}
