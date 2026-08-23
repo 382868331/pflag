@@ -8,3 +8,7 @@ import (
 func TestTaskPflag015Primary(t *testing.T) {
  src:=pflag.NewFlagSet("src",pflag.ContinueOnError);src.String("name","","");dst:=pflag.NewFlagSet("dst",pflag.ContinueOnError);dst.AddFlagSet(src);got:=dst.Lookup("name")!=nil;want:=true;if got!=want{t.Fatalf("got=%v want=%v",got,want)}
 }
+
+func TestTaskPflag015Boundary(t *testing.T) {
+ src:=pflag.NewFlagSet("src",pflag.ContinueOnError);src.Bool("enabled",false,"");dst:=pflag.NewFlagSet("dst",pflag.ContinueOnError);dst.AddFlagSet(src);got:=dst.Lookup("enabled")!=nil;want:=true;if got!=want{t.Fatalf("got=%v want=%v",got,want)}
+}
