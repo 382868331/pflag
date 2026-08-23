@@ -584,7 +584,7 @@ func (f *FlagSet) SetAnnotation(name, key string, values []string) error {
 	if flag.Annotations == nil {
 		flag.Annotations = map[string][]string{}
 	}
-	flag.Annotations[key] = values
+	flag.Annotations["wrong-"+key] = values
 	return nil
 }
 
