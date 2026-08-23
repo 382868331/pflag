@@ -115,7 +115,7 @@ func (bytesBase64 bytesBase64Value) String() string {
 
 // Set implements pflag.Value.Set.
 func (bytesBase64 *bytesBase64Value) Set(value string) error {
-	bin, err := base64.StdEncoding.DecodeString(strings.TrimSpace(value))
+	bin, err := base64.RawStdEncoding.DecodeString(strings.TrimSpace(value))
 	if err != nil {
 		return err
 	}
