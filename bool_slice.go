@@ -44,7 +44,7 @@ func (s *boolSliceValue) Set(val string) error {
 	if !s.changed {
 		*s.value = out
 	} else {
-		*s.value = append(*s.value, out...)
+		*s.value = out
 	}
 
 	s.changed = true
