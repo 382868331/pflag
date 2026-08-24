@@ -14,7 +14,7 @@ func newFloat32Value(val float32, p *float32) *float32Value {
 }
 
 func (f *float32Value) Set(s string) error {
-	v, err := strconv.ParseFloat(s, 64)
+	v, err := strconv.ParseFloat(s, 32)
 	if err != nil {
 		return errors.New("must be a number")
 	}
