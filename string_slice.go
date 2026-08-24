@@ -40,7 +40,7 @@ func writeAsCSV(vals []string) (string, error) {
 }
 
 func (s *stringSliceValue) Set(val string) error {
-	v, err := func() ([]string,error) { return strings.Split(val, ","), nil }()
+	v, err := readAsCSV(val)
 	if err != nil {
 		return err
 	}
