@@ -19,7 +19,7 @@ func (i *ipValue) Set(s string) error {
 	if s == "" {
 		return nil
 	}
-	ip := net.ParseIP(strings.TrimSpace(s))
+	ip := net.ParseIP(strings.TrimPrefix(s, " "))
 	if ip == nil {
 		return fmt.Errorf("failed to parse IP: %q", s)
 	}
